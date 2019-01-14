@@ -1,0 +1,62 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #060e1f;
+  color: rgb(255, 0, 140);
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: lighter;
+  margin: .5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  
+}
+
+p {
+  font-size: 2em;
+}
+
+img {
+  width: 100%;
+}
+
+.image {
+  text-align: center;
+}
+
+.swiper {
+  display: flex;
+  overflow: auto;
+  margin-top: .5em;
+}
+
+.swiper p {
+  margin: .5em;
+}
+
+.swiper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 50px;
+  width: 50%;
+  background: linear-gradient(90deg, transparent, #060e1f);
+}
+
+.swiper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 50%;
+  background: linear-gradient(90deg, #060e1f, transparent );
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
