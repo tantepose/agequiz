@@ -21,7 +21,6 @@ h1 {
 }
 
 .emoji {
-
   -webkit-text-fill-color: white;
 }
 
@@ -31,7 +30,6 @@ p {
 
 img {
   width: 80%;
-  mix-blend-mode: darken;
   border-radius: 50%;
   box-shadow: 0px 0px 50px rgba(255, 0, 170, 0.2);
 }
@@ -43,7 +41,8 @@ img {
 .swiper {
   display: flex;
   overflow: auto;
-  margin-top: .5em;
+  -webkit-overflow-scrolling: touch;
+  margin-top: .5em; 
 }
 
 .swiper p {
