@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../images/image.jpg';
 
 const Image = () => (
-    <div class="image">
+    <div className="image">
         <img src={image} />
     </div> 
 );

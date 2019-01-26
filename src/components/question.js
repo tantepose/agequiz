@@ -1,10 +1,10 @@
 import React from 'react';
 import Typist from 'react-typist';
 
-const Question = () => (
-    <div class="question">
+const Question = (props) => (
+    <div className="question">
         <Typist>
-            <h1>#1/10: Macaulay Culkin in Home Alone. <span class='emoji'>😍</span></h1>
+            <h1>{props.text}</h1>
         </Typist>
     </div> 
 );
