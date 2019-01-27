@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // local files
-import './App.css';
+// import './App.css';
 import questions from './data/questions.js';
 
 // components
@@ -18,7 +18,7 @@ class App extends Component {
 
   componentWillMount () {
     this.setState({
-      question: questions[this.getRandom()].text
+      question: questions[this.getRandom()]
     });
   }
 
@@ -30,8 +30,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Question text={this.state.question} />
-        <Image />
+        <Question text={this.state.question.text} />
+        <Image path={this.state.question.image}/>
         <Swiper />
       </div>
     );

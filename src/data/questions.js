@@ -1,13 +1,13 @@
 export default [{
     "text": "Macaulay Culkin in Home Alone.",
     "answer": 8,
-    "image": "/culkin.jpg"
+    "image": "/data/image.jpg"
 }, {
     "text": "Some other dude in something.",
     "answer": 50,
-    "image": "/some.jpg"
+    "image": "/data/image.jpg"
 }, {
     "text": "Some other chick in something.",
     "answer": 30,
-    "image": "/chick.jpg"
+    "image": "/data/image.jpg"
 }];
