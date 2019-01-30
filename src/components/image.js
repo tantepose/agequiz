@@ -7,6 +7,13 @@ const ImageImage = styled.img`
     border-radius: 50%;
     margin-left: 10%;
     margin-right: 10%;
+
+    filter: 
+        hue-rotate(310deg)
+        contrast(150%)
+        brightness(150%)
+    ;
+
 `;
 
 const Image = (props) => (

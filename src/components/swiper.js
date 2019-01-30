@@ -8,7 +8,7 @@ const SwiperDiv = styled.div`
     margin-top: .5em; 
     top: 0px;
 
-    &:after {
+    /* &:after {
         content: "";
         position: absolute;
         right: 0;
@@ -24,7 +24,7 @@ const SwiperDiv = styled.div`
         height: 50px;
         width: 40%;
         background: linear-gradient(90deg, #060e1f, transparent );
-    }
+    } */
 
     p {
         color: rgb(255, 0, 140);
@@ -36,10 +36,10 @@ const SwiperDiv = styled.div`
     ::-webkit-scrollbar { 
         display: none; 
     }
-`
+`;
 
-const Swiper = () => (
-    <SwiperDiv>
+const Swiper = (props) => (
+    <SwiperDiv onClick = {props.onClick}>
         <p>1</p>
         <p>2</p>
         <p>3</p>

@@ -27,12 +27,16 @@ class App extends Component {
     return randomNumber;
   }
 
+  swiperClick () {
+    console.log('click!');
+  }
+
   render() {
     return (
       <div className="App">
         <Question text={this.state.question.text} />
         <Image path={this.state.question.image}/>
-        <Swiper />
+        <Swiper onClick={() => {this.swiperClick()}}/>
       </div>
     );
   }
