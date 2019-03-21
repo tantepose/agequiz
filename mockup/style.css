@@ -1,0 +1,64 @@
+/* GLOBAL */
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    margin: 1.5em;
+}
+
+p {
+    padding: 0em;
+    margin: .1em;
+}
+
+/* TOP */
+
+.top {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.active {
+    color: red;
+}
+
+/* MAIN */
+
+.main {
+    font-size: 1.7em;
+    text-align: end;
+    line-height: .9em;
+    margin-bottom: 30px;
+}
+
+.main img {
+    display: inline-block;
+    margin-left: -.4em;
+    width: 20px;
+}
+
+.main p {
+    display: inline;
+}
+
+/* PICTURE */
+
+.picture {
+    margin-bottom: 30px;
+}
+
+.picture img {
+    width:100%;
+}
+
+/* BOTTOM */
+
+.bottom {
+    font-size: 3em;
+    display: flex;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.bottom p {
+    margin-right: .5em;
+}
