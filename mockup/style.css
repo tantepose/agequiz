@@ -1,5 +1,9 @@
 /* GLOBAL */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Anonymous Pro', monospace;
     padding: 1.5em;
@@ -12,10 +16,6 @@ body {
 body, html {
     width: 100%;
     height: 100%;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 p {

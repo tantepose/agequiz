@@ -1,49 +1,11 @@
 import React from 'react';
-import styled from 'styled-components'
-
-const SwiperDiv = styled.div`
-    display: flex;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-top: .5em; 
-    top: 0px;
-
-    /* &:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        height: 50px;
-        width: 40%;
-        background: linear-gradient(90deg, transparent, #060e1f);
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 50px;
-        width: 40%;
-        background: linear-gradient(90deg, #060e1f, transparent );
-    } */
-
-    p {
-        color: rgb(255, 0, 140);
-        margin: .5em;
-        font-family: 'Quicksand', sans-serif;
-        font-size: 2em;
-    }
-
-    ::-webkit-scrollbar { 
-        display: none; 
-    }
-`;
 
 const Swiper = (props) => (
-    <SwiperDiv onClick = {props.onClick}>
+    <div className="bottom" onClick = {props.onClick}>
         <p>1</p>
         <p>2</p>
         <p>3</p>
-        <p>4</p>
+        <p className="active">4</p>
         <p>5</p>
         <p>6</p>
         <p>7</p>
@@ -90,10 +52,7 @@ const Swiper = (props) => (
         <p>48</p>
         <p>49</p>
         <p>50</p>
-        <p> </p>
-        <p> </p>
-        <p> </p>
-    </SwiperDiv>
+    </div>
 );
 
 export default Swiper;

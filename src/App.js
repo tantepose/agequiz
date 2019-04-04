@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 
 // local files
-// import './App.css';
-import questions from './data/questions.js';
 
 // components
 import Swiper from './components/swiper.js';
@@ -12,20 +10,30 @@ import Image from './components/image.js';
 
 class App extends Component {
 
-  // constructor (props) {
-  //   super();
+  constructor (props) {
+    super();
+
+    this.state = {
+      question: {
+        actor: "Julia Roberts",
+        movie: "Pretty Woman",
+        year: 1990,
+        answer: 30,
+        image: "/roberts-prettywoman.jpg"
+      }
+    };
+  }
+
+  // componentWillMount () {
+  //   this.setState({
+  //     question: questions[this.getRandom()]
+  //   });
   // }
 
-  componentWillMount () {
-    this.setState({
-      question: questions[this.getRandom()]
-    });
-  }
-
-  getRandom () {
-    const randomNumber = Math.floor(Math.random()*questions.length);
-    return randomNumber;
-  }
+  // getRandom () {
+  //   const randomNumber = Math.floor(Math.random()*questions.length);
+  //   return randomNumber;
+  // }
 
   swiperClick () {
     console.log('click!');
@@ -34,9 +42,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Question text={this.state.question.text} />
-        <Image path={this.state.question.image}/>
-        <Swiper onClick={() => {this.swiperClick()}}/>
+
+        <div className="top">
+          <p>1,2,<span className="active">3</span>,4,5</p>
+        </div>
+
+        <Question question={this.state.question} />
+
+        <Image image={this.state.question.image} />
+
+        <Swiper onClick={() => {this.swiperClick()}} />
+
       </div>
     );
   }
