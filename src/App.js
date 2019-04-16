@@ -59,8 +59,8 @@ class App extends Component {
   //   return randomNumber;
   // }
 
-  swiperClick () {
-    console.log('click!');
+  swiperClick (number) {
+    console.log('click: ', number);
   }
 
   render() {
@@ -81,7 +81,7 @@ class App extends Component {
             : <Image image={urlFor(this.state.questions[0].image)} />
         }
 
-        <Swiper onClick={() => {this.swiperClick()}} />
+        <Swiper onClick={this.swiperClick} />
 
       </div>
     );
