@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 // components
+import RoundCount from './components/roundCount.js';
 import Swiper from './components/swiper.js';
 import Question from './components/question.js';
 import Image from './components/image.js';
@@ -37,7 +38,7 @@ class App extends Component {
         movie: "...",
         year: "..."
       },
-      round: 1,
+      round: 0,
       loading: true
     };
 
@@ -72,6 +73,7 @@ class App extends Component {
     // set corresponding question to be current question in state
     this.setState({
       loading: true,
+      round: this.state.round + 1,
       currentQuestion: this.state.allQuestions[questionNumber]
     }, () => {
       this.setState({
@@ -99,9 +101,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div className="top">
-          <p>1,2,<span className="active">3</span>,4,5</p>
-        </div>
+        <RoundCount round={this.state.round}/>
 
         { (this.state.loading) 
             ? <Question question={this.state.loadingQuestion} />
