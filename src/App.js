@@ -39,6 +39,7 @@ class App extends Component {
         year: "..."
       },
       round: 0,
+      points: 0,
       loading: true
     };
 
@@ -83,11 +84,31 @@ class App extends Component {
 
     // remove current question from questions pool in state
     this.state.allQuestions.splice(questionNumber, 1); 
+
+    console.log("Your current points:", this.state.points);
   }
 
   // clicks on numbers in swiper
   numberClick (number) {
-    console.log('click: ', number);
+    // numbers for calculating points (max - offset)
+    const answer = this.state.currentQuestion.answer;
+    const guess = number; 
+    const offset = Math.abs(answer - guess);
+    
+    const maxPoints = 5;
+    const newPoints = maxPoints - offset;
+
+    console.log("You clicked", guess);
+    console.log("The answer is", answer);
+
+    // give points, if any to give
+    if (newPoints > 0) {
+      this.setState({
+        points: this.state.points + newPoints
+      });
+      console.log("...giving you the new points:", newPoints);
+    }
+
     this.newRound();
   }
 
