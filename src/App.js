@@ -61,7 +61,7 @@ class App extends Component {
       })
 
       .catch(err => {
-        console.error('Oh no, error occured: ', err)
+        console.error('Oh no, an error occured: ', err)
       });
   }
 
@@ -86,7 +86,6 @@ class App extends Component {
   // clicks on numbers in swiper
   numberClick (number) {
     console.log('click: ', number);
-    console.log('this:', this);
     this.newRound();
   }
 
