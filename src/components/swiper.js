@@ -10,7 +10,9 @@ for (var i=1; i<100; i++) {
 // draw the swiper with numbers from array
 const Swiper = (props) => (
     <div className="bottom">
-    {numbers.map((number) => <Number number={number} onClick={props.onClick} key={number} /> ) }
+    {numbers.map((number) => 
+        <Number number={number} onClick={props.onClick} key={number} /> 
+    )}
     </div>
 );
 

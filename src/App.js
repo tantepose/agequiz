@@ -6,6 +6,9 @@ import Swiper from './components/swiper.js';
 import Question from './components/question.js';
 import Image from './components/image.js';
 
+// local files
+// import loading from './public/loading.gif';
+
 // setting up sanity
 
 // sanity client
@@ -28,12 +31,17 @@ class App extends Component {
   constructor (props) {
     super();
     this.state = {
-      questions: [],
+      allQuestions: [],
+      loadingQuestion: {
+        actor: "...",
+        movie: "...",
+        year: "..."
+      },
       round: 1,
       loading: true
     };
 
-    this.startRound = this.startRound.bind(this);
+    this.newRound = this.newRound.bind(this);
   }
 
   componentWillMount() { 
@@ -45,11 +53,11 @@ class App extends Component {
       
       .then(questions => {
         this.setState({
-          questions: questions,
-          question: {},
+          allQuestions: questions,
+          currentQuestion: {},
           loading: false
         });
-        this.startRound();
+        this.newRound();
       })
 
       .catch(err => {
@@ -57,30 +65,37 @@ class App extends Component {
       });
   }
 
-  startRound () {
+  newRound () {
     // get random question number
     const questionNumber = this.getRandomQuestionNumber();
     
     // set corresponding question to be current question in state
     this.setState({
-      question: this.state.questions[questionNumber]
+      loading: true,
+      currentQuestion: this.state.allQuestions[questionNumber]
+    }, () => {
+      this.setState({
+        loading: false
+      })
     });
 
     // remove current question from questions pool in state
-    this.state.questions.splice(questionNumber, 1); 
-  }
-
-  // get a random number, based on length of questions array in state
-  getRandomQuestionNumber () {
-    return Math.floor(Math.random() * this.state.questions.length);
+    this.state.allQuestions.splice(questionNumber, 1); 
   }
 
   // clicks on numbers in swiper
   numberClick (number) {
     console.log('click: ', number);
-    this.startRound(); // doesnt work :(
+    console.log('this:', this);
+    this.newRound();
   }
 
+  // get a random number, based on length of questions array in state
+  getRandomQuestionNumber () {
+    return Math.floor(Math.random() * this.state.allQuestions.length);
+  }
+
+  // render the whole app, loading or not
   render() {
     return (
       <div className="App">
@@ -90,16 +105,19 @@ class App extends Component {
         </div>
 
         { (this.state.loading) 
-            ? null
-            : <Question question={this.state.question} />
+            ? <Question question={this.state.loadingQuestion} />
+            : <Question question={this.state.currentQuestion} />
         }
         
         { (this.state.loading) 
-            ? null
-            : <Image image={urlFor(this.state.question.image)} />
+            ? <Image image={'/loading.gif'} />
+            : <Image image={urlFor(this.state.currentQuestion.image)} />
         }
 
-        <Swiper onClick={this.numberClick} />
+        { (this.state.loading)
+          ? null
+          : <Swiper onClick={this.numberClick.bind(this)} />
+        }
 
       </div>
     );

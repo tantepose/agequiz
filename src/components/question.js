@@ -1,6 +1,6 @@
 import React from 'react';
 
-// draw question text
+// render questions with icons
 const Question = props => (
     <div className="main">
         <p>{props.question.actor} </p><img src="/face.svg" alt="" /><br/>
