@@ -13,9 +13,7 @@ body, html, #root, .App {
 
 .App {
   font-family: 'Anonymous Pro', monospace;
-
   padding: 1.5em;
-  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,21 +25,21 @@ p {
   margin: .1em;
 }
 
+.active {
+  color: red;
+}
+
 /* TOP */
 
 .top {
-  font-size: 3em;
+  font-size: 2em;
   margin-bottom: 30px;
-}
-
-.active {
-  color: red;
 }
 
 /* MAIN */
 
 .main {
-  font-size: 1.7em;
+  font-size: 1.6em;
   text-align: end;
   line-height: .9em;
   margin-bottom: 30px;
@@ -79,6 +77,19 @@ p {
 
 .bottom p {
   margin-right: .5em;
+}
+
+/* SUMMARY */
+.summary {
+  font-size: 1.7em;
+}
+
+.summary-item {
+  padding-bottom: 2em;
+}
+
+.summary-points {
+  font-size: 1.9em;
 }
 
 /* computers & tablets */

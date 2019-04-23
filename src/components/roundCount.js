@@ -30,7 +30,7 @@ const RoundCount = (props) => (
             : null
         }
         
-        { (props.round === 0)
+        { (props.round < 1 || props.round > 5)
             ? <p>1,2,3,4,5</p>
             : null
         }    
