@@ -158,9 +158,7 @@ class App extends Component {
     // render summary, if mode is summary
     else if (this.state.mode === "summary") {
       return (
-        <div className="summary">
           <Summary questionLog={this.state.questionLog} points={this.state.points}/>
-        </div>
       )
     }
   }
