@@ -98,7 +98,7 @@ class App extends Component {
     const answer = this.state.currentQuestion.answer;
     const guess = number; 
     const offset = Math.abs(answer - guess);
-    const maxPoints = 3;
+    const maxPoints = 5;
     var newPoints = maxPoints - offset;
 
     // give the points, if there actually are any to give
