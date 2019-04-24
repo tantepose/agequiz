@@ -1,6 +1,6 @@
 import React from 'react';
 
-// draw the swiper with numbers from array
+// render summary, with data from the log in main component's state
 const Summary = (props) => (
     <div className="summary">
         {props.questionLog.map((question, key) =>

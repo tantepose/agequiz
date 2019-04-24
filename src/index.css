@@ -20,15 +20,33 @@ body {
   padding-bottom: .5em;
 }
 
+p {
+  padding: 0em;
+  margin: .1em;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  color: red;
+  background: none;
+  border-radius: 0;
+  border: solid;
+  padding: 1em;
+  width: 80%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 1em;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
-
-p {
-  padding: 0em;
-  margin: .1em;
 }
 
 .active {
@@ -98,18 +116,18 @@ p {
   text-align: center;
 }
 
-button {
-  color: red;
-  background: none;
-  border-radius: 0;
-  border: solid;
-  padding: 1em;
-  width: 80%;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+/* MENU */
 
-  font-family: 'Anonymous Pro', monospace;
-  font-size: 1em;
+.menu {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 2em;
+  height: 100%;
+}
+
+.menu p {
+  font-size: .5em;
 }
 
 /* computers & tablets */

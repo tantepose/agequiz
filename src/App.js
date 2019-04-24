@@ -6,6 +6,7 @@ import Swiper from './components/swiper.js';
 import Question from './components/question.js';
 import Image from './components/image.js';
 import Summary from './components/summary.js';
+import Menu from './components/menu.js';
 
 // sanity client
 const sanityClient = require('@sanity/client')
@@ -159,6 +160,13 @@ class App extends Component {
     else if (this.state.mode === "summary") {
       return (
           <Summary questionLog={this.state.questionLog} points={this.state.points}/>
+      )
+    }
+
+    // render start menu, if mode is menu
+    else if (this.state.mode === "menu") {
+      return (
+        <Menu />
       )
     }
   }
