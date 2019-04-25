@@ -14,7 +14,7 @@ class Menu extends Component {
     render () {
         return (
             <div className="menu">
-                <h1><span role="img" aria-label="age guiz">👨‍👧‍👩‍👧‍👶</span></h1>
+                <h1><span role="img" aria-label="age guiz">👵</span></h1>
                 <button type="button" onClick={() => {this.props.play()}}>start</button>
                 <p>Swipe and press the numbers to guess the actor's age when their movie premiered.</p>
                 <br/>
