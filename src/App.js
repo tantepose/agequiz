@@ -136,9 +136,15 @@ class App extends Component {
   }
 
   render() {
+    // render start menu, if mode is menu
+    if (this.state.mode === "menu") {
+      return (
+        <Menu play={this.newGame.bind(this)}/>
+      )
+    }
 
     // render play area, if mode is play
-    if (this.state.mode === "play") {
+    else if (this.state.mode === "play") {
       return (
         <div className="App">
           <RoundCount round={this.state.round}/>
@@ -156,12 +162,6 @@ class App extends Component {
       )
     }
 
-    // render start menu, if mode is menu
-    else if (this.state.mode === "menu") {
-      return (
-        <Menu play={this.newGame.bind(this)}/>
-      )
-    }
   }
 
 }

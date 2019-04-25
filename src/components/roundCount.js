@@ -1,7 +1,6 @@
 import React from 'react';
 
-// render top text with current round highlighted 
-// in an incredibly stupid way, mind you
+// top text with current round highlighted (in an incredibly stupid way)
 const RoundCount = (props) => (
     <div className="top">
 

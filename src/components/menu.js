@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 
-// render start menu
+// start menu (this should probably be a stateless component)
 class Menu extends Component {
-
-    componentWillMount () {
-
-    }
-
-    componentDidMount() {
-
-    }
 
     render () {
         return (

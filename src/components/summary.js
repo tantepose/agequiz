@@ -1,6 +1,6 @@
 import React from 'react';
 
-// render summary, with data from the log in main component's state
+// endgame summary, with data from the log in main component's state
 const Summary = (props) => (
     <div className="summary">
         {props.questionLog.map((question, key) =>

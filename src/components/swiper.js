@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Number from './number';
 
+// swiper for age selection
 class Swiper extends Component {
 
     componentWillMount () {
@@ -10,7 +11,7 @@ class Swiper extends Component {
             numbers.push(i);
         }
 
-        // make them accessible from renderer
+        // make numbers accessible from renderer (probably a stupid way to do it)
         this.setState({
             numbers: numbers
         });
@@ -20,12 +21,12 @@ class Swiper extends Component {
     }
 
     componentDidMount() {
-        // scroll swiper halft way
+        // scroll the swiper
         this.swiper.current.scrollLeft = this.swiper.current.scrollWidth / 4.3;
     }
 
     render () {
-        // draw the swiper with numbers from array
+        // draw the swiper with number component using all the numbers
         return (
             <div className="bottom" ref={this.swiper}>
                 {this.state.numbers.map((number) => 

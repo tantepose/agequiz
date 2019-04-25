@@ -1,6 +1,6 @@
 import React from 'react';
 
-// render questions with icons
+// each question with icons
 const Question = props => (
     <div className="main">
         <p>{props.question.actor} </p><img src="/face.svg" alt="actor" /><br/>
