@@ -14,13 +14,14 @@ class Menu extends Component {
     render () {
         return (
             <div className="menu">
-                <h1>age.quiz</h1>
-                <button type="button" onClick={() => {window.location.reload()}}>start</button>
-                <p>Swipe the numbers to guess the actor's age when their movie premiered.</p>
+                <h1><span role="img" aria-label="age guiz">👨‍👧‍👶</span></h1>
+                <button type="button" onClick={() => {this.props.play()}}>start</button>
+                <p>Swipe and press the numbers to guess the actor's age when their movie premiered.</p>
                 <br/>
-                <p>Maximum 5 points for each guess, -1 for each year off.</p>
+                <p>5 points per correct guess, -1 point per year off.</p>
                 <br />
-                <p>Made for mobile with React, Sanity.io and Figma, by Ole Petter Baugerød Stokke.</p>
+                <p>Made for handheld devices with React & Sanity.io, by Ole Petter Baugerød Stokke.</p>
+
             </div>
 
         )

@@ -35,6 +35,7 @@ button {
   background: none;
   border-radius: 0;
   border: solid;
+
   padding: 1em;
   width: 80%;
   margin-top: 1.5em;
@@ -42,16 +43,20 @@ button {
 
   font-family: 'Anonymous Pro', monospace;
   font-size: 1em;
+
+  cursor: pointer;
 }
+
+.active {
+  color: red;
+}
+
+/* PLAY AREA */
 
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
-
-.active {
-  color: red;
 }
 
 /* TOP */
@@ -99,6 +104,7 @@ button {
 
 .bottom p {
   margin-right: .5em;
+  cursor: pointer;
 }
 
 /* SUMMARY */
@@ -137,4 +143,10 @@ button {
     padding-left: 30%;
     padding-right: 30%;
   }
+
+  .menu {
+    padding-top: 30%;
+    padding-bottom: 30%;
+  }
+  
 }

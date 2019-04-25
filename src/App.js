@@ -39,11 +39,11 @@ class App extends Component {
       questionLog: [],
       round: 0,
       points: 0,
-      loading: true,
-      mode: "play"
+      mode: "menu"
     };
 
     this.newRound = this.newRound.bind(this);
+    this.newGame = this.newGame.bind(this);
   }
 
   // make query to sanity for all possible questions before mounting
@@ -56,15 +56,21 @@ class App extends Component {
       .then(questions => {
         this.setState({
           allQuestions: questions,
-          currentQuestion: {},
-          loading: false
+          currentQuestion: {}
         });
-        this.newRound();
       })
 
       .catch(err => {
         console.error('Oh no, an error occured: ', err)
       });
+  }
+
+  // starting a new game
+  newGame () {
+    this.setState({
+      mode: "play"
+    });
+    this.newRound();
   }
 
   newRound () {
@@ -129,29 +135,16 @@ class App extends Component {
     return Math.floor(Math.random() * this.state.allQuestions.length);
   }
 
-  // render the whole app, loading or not
   render() {
 
     // render play area, if mode is play
     if (this.state.mode === "play") {
       return (
         <div className="App">
-  
           <RoundCount round={this.state.round}/>
-  
           <Question question={this.state.currentQuestion} />
-          
-          
-          { (this.state.loading) 
-              ? <Image image={'/loading.gif'} />
-              : <Image image={urlFor(this.state.currentQuestion.image)} />
-          }
-  
-          { (this.state.loading)
-            ? null
-            : <Swiper onClick={this.numberClick.bind(this)} />
-          }
-  
+          <Image image={urlFor(this.state.currentQuestion.image)} />
+          <Swiper onClick={this.numberClick.bind(this)} />
         </div>
       );
     }
@@ -166,7 +159,7 @@ class App extends Component {
     // render start menu, if mode is menu
     else if (this.state.mode === "menu") {
       return (
-        <Menu />
+        <Menu play={this.newGame.bind(this)}/>
       )
     }
   }
