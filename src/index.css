@@ -134,7 +134,12 @@ button {
 }
 
 .menu p {
-  font-size: .5em;
+  font-size: .7em;
+}
+
+.menu img {
+  width: 20%;
+  margin: 1em;
 }
 
 /* computers & tablets */
