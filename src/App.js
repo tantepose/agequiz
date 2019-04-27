@@ -26,7 +26,6 @@ function urlFor(source) {
 class App extends Component {
   // set initial state, bindings and refs
   constructor (props) {
-
     super();
 
     this.state = {
@@ -70,13 +69,13 @@ class App extends Component {
     this.setState({
       mode: "play"
     });
+
     this.newRound();
   }
 
   newRound () {
     // not done yet? start new round
     if (this.state.round < 5) {
-      
       // get array index of the new current question
       const questionNumber = this.getRandomQuestionNumber()
       
@@ -100,7 +99,6 @@ class App extends Component {
 
   // clicks on numbers in swiper
   numberClick (number) {
-
     // calculating points (max - offset)
     const answer = this.state.currentQuestion.answer;
     const guess = number; 
@@ -161,9 +159,7 @@ class App extends Component {
           <Summary questionLog={this.state.questionLog} points={this.state.points}/>
       )
     }
-
   }
-
 }
 
 export default App;

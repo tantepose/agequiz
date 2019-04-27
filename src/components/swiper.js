@@ -21,7 +21,7 @@ class Swiper extends Component {
     }
 
     componentDidMount() {
-        // scroll the swiper
+        // scroll the swiper a bit on mount
         this.swiper.current.scrollLeft = this.swiper.current.scrollWidth / 4.3;
     }
 
@@ -38,9 +38,4 @@ class Swiper extends Component {
     }
 }
 
-
-
-
-
 export default Swiper;
-
