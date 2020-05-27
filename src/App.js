@@ -46,12 +46,12 @@ class App extends Component {
   }
 
   // make query to sanity for all possible questions before mounting
-  componentWillMount() { 
-    const query = '*[ _type == "question"] {movie, actor, year, answer, image}';
-    
+  componentWillMount() {
+    const query = '*[ _type == "question"] {_id, movie, actor, year, answer, image}';
+
     client
       .fetch(query)
-      
+
       .then(questions => {
         this.setState({
           allQuestions: questions,
@@ -78,7 +78,7 @@ class App extends Component {
     if (this.state.round < 5) {
       // get array index of the new current question
       const questionNumber = this.getRandomQuestionNumber()
-      
+
       // get a new current question
       this.setState({
         round: this.state.round + 1,
@@ -86,9 +86,9 @@ class App extends Component {
       });
 
       // remove current question from questions pool in state
-      this.state.allQuestions.splice(questionNumber, 1); 
-    } 
-    
+      this.state.allQuestions.splice(questionNumber, 1);
+    }
+
     // all rounds done? initiate summary
     else {
       this.setState({
@@ -96,12 +96,18 @@ class App extends Component {
       })
     }
   }
-
+  sendStats (question) {
+    fetch('/.netlify/functions/postStats', {
+      method: 'POST',
+      body: question
+    })
+  }
   // clicks on numbers in swiper
   numberClick (number) {
     // calculating points (max - offset)
+    this.sendStats(this.stateCurrentQuestion)
     const answer = this.state.currentQuestion.answer;
-    const guess = number; 
+    const guess = number;
     const offset = Math.abs(answer - guess);
     const maxPoints = 5;
     var newPoints = maxPoints - offset;
